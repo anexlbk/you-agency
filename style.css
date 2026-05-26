@@ -1,0 +1,107 @@
+body {
+    background-color: #001711;
+    color: #c2ebdc;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    font-family: 'Cairo', sans-serif;
+}
+.logo-main {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+}
+.logo-hero {
+    width: min(58vw, 520px);
+    opacity: 0.1;
+    filter: grayscale(1) contrast(1.2);
+    animation: heroFloat 18s ease-in-out infinite;
+}
+.glass-card {
+    background: rgba(7, 48, 38, 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(149, 211, 186, 0.2);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.glass-card:hover {
+    border-color: #a4d64c;
+    box-shadow: 0 0 30px rgba(164, 214, 76, 0.25);
+    transform: translateY(-6px);
+}
+.glow-btn {
+    background: linear-gradient(135deg, #a4d64c 0%, #3dbf9e 100%);
+    color: #002117;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+.glow-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(164, 214, 76, 0.45);
+}
+.outline-btn {
+    border: 2px solid rgba(164,214,76,0.4);
+    color: #a4d64c;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+.outline-btn:hover {
+    border-color: #a4d64c;
+    background: rgba(164,214,76,0.07);
+}
+.blob {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(164,214,76,0.10) 0%, transparent 70%);
+    filter: blur(80px);
+    pointer-events: none;
+    animation: floatblob 14s infinite alternate ease-in-out;
+}
+@keyframes floatblob {
+    0% { transform: translate(0,0) scale(1); }
+    100% { transform: translate(50px,40px) scale(1.15); }
+}
+.floating-logo {
+    animation: logofloat 8s infinite ease-in-out;
+}
+@keyframes logofloat {
+    0%,100% { transform: translateY(0) scale(1); opacity: 0.07; }
+    50% { transform: translateY(-28px) scale(1.04); opacity: 0.13; }
+}
+@keyframes heroFloat {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-24px); }
+}
+.reveal { opacity:0; transform:translateY(28px); transition: opacity 0.75s ease, transform 0.75s ease; }
+.reveal.show { opacity:1; transform:translateY(0); }
+.stagger > * { opacity:0; transform:translateY(18px); transition: opacity 0.55s ease, transform 0.55s ease; }
+.stagger.show > * { opacity:1; transform:translateY(0); }
+.bullet-item { display:flex; align-items:flex-start; gap:10px; margin-bottom:8px; color:#c3c9b2; font-size:14px; line-height:1.5; }
+.bullet-dot { width:7px; height:7px; border-radius:50%; background:#a4d64c; flex-shrink:0; margin-top:5px; }
+.pack-card { background:rgba(7,48,38,0.6); backdrop-filter:blur(12px); border:1px solid rgba(149,211,186,0.15); border-radius:1.25rem; padding:2.5rem; display:flex; flex-direction:column; }
+.pack-card.featured { border:2px solid rgba(164,214,76,0.55); box-shadow:0 0 50px rgba(164,214,76,0.12); }
+.material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+#main-nav { transition: all 0.4s ease; }
+#main-nav.scrolled { background: rgba(0,23,17,0.92); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(149,211,186,0.15); }
+.service-icon { font-size:2.5rem; color:#3dbf9e; margin-bottom:1rem; }
+.work-slider { display:grid; grid-auto-flow:column; grid-auto-columns:minmax(220px, 85%); gap:1rem; overflow-x:auto; padding:0.5rem 0.25rem; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch; }
+.work-slide { scroll-snap-align:start; background:transparent; border-radius:1.25rem; }
+.work-slider::-webkit-scrollbar { height:0; }
+.work-slider { scrollbar-width:none; }
+.work-slider::-webkit-scrollbar-thumb { background:transparent; }
+.work-frame { width:100%; aspect-ratio:9/16; border:0; border-radius:1.25rem; background:#00110c; }
+@media(max-width:768px){
+    .hero-title { font-size:2.8rem; }
+    .section-title { font-size:2rem; }
+}
+@media(min-width:640px){
+  .work-slider { grid-auto-columns:minmax(240px, 70%); gap:1.25rem; padding:0.75rem; }
+}
+@media(min-width:1024px){
+  .work-slider { grid-auto-columns:minmax(260px, 32%); gap:1.5rem; padding:1rem; }
+  .work-frame { border-radius:1.5rem; }
+}
+@media(min-width:1280px){
+  .work-slider { grid-auto-columns:minmax(280px, 28%); }
+}
