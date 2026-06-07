@@ -16,6 +16,11 @@ body {
     filter: grayscale(1) contrast(1.2);
     animation: heroFloat 18s ease-in-out infinite;
 }
+.logo-footer {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
 .glass-card {
     background: rgba(7, 48, 38, 0.6);
     backdrop-filter: blur(12px);
