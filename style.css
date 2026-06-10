@@ -110,3 +110,20 @@ body {
 @media(min-width:1280px){
   .work-slider { grid-auto-columns:minmax(280px, 28%); }
 }
+
+/* Responsive form and layout tweaks */
+#contact-form .form-row { display:flex; gap:0.75rem; flex-wrap:wrap; }
+#contact-form input, #contact-form textarea { box-sizing: border-box; }
+
+@media (max-width:640px) {
+    #contact-form .form-row { flex-direction: column; }
+    #contact-form input, #contact-form textarea { width:100% !important; }
+    .glass-card.p-8 { padding: 1rem; }
+    .hero-title { font-size: clamp(2.2rem, 6vw, 3.2rem); }
+    .service-icon { font-size:2.1rem; }
+    .work-slider { grid-auto-columns:minmax(220px, 88%); }
+}
+
+@media (min-width:641px) and (max-width:1024px) {
+    .work-slider { grid-auto-columns:minmax(240px, 60%); }
+}
